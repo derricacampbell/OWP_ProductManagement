@@ -1,0 +1,148 @@
+name: "OFFICIAL OWP INTAKE & RFC PORTAL"
+description: "High-fidelity secure entry point for all OWP External Stakeholders."
+title: "[SUBMISSION]: <Project Title>"
+labels: ["Status: Intake", "Triage: New Submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🏛️ Office of Water Prediction (OWP)
+        ## 🛡️ Governance & Research-to-Operations (R2O) Portal
+        ---
+        **Welcome.** This standardized intake ensures all research meets the **OWP Best Practices** and federal security requirements. 
+
+  - type: dropdown
+    id: stakeholder_type
+    attributes:
+      label: "🏢 Stakeholder Category"
+      description: "Select the category that best describes your affiliation."
+      options:
+        - "CIROH Partner (Academic/Research)"
+        - "Federal Agency / Internal NOAA"
+        - "Private Sector / Industry"
+        - "Independent Researcher / Non-Affiliated"
+        - "Other"
+    validations:
+      required: true
+
+  - type: input
+    id: organization_origin
+    attributes:
+      label: "🏫 Organization / University Name"
+      description: "Specify your University, Company, or Agency name."
+      placeholder: "e.g., University of Alabama, Utah State, Google"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target_alignment
+    attributes:
+      label: "🎯 Mission Target Alignment"
+      description: "Select the specific OWP project target version this impacts."
+      options:
+        - "Target: NWM v4.0"
+        - "Target: NextGen"
+        - "Target: FIM v2.1"
+        - "Target: Cloud Infrastructure"
+        - "Target: Documentation/SOP"
+        - "Other / Not Listed"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: trl
+    attributes:
+      label: "📊 Declared Maturity (TRL)"
+      description: "Specify the current Technology Readiness Level."
+      options:
+        - "TRL 1-3 (Research)"
+        - "TRL 4-5 (Development)"
+        - "TRL 6-7 (Demonstration)"
+        - "TRL 8-9 (Operations)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: funding
+    attributes:
+      label: "💰 Primary Funding Alignment"
+      description: "Identify the funding stream supporting this work."
+      options:
+        - "CIROH Base Funding"
+        - "OWP Operations (Base)"
+        - "IIJA / IRA"
+        - "Competitive Grant / Seed"
+        - "Other / Not Disclosed"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📄 Technical Substance & R2O Value"
+      description: "Provide the details of your submission. Use Markdown for tables or code snippets."
+      placeholder: "Describe the science gap, logic, or infrastructure changes."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: compliance
+    attributes:
+      label: "✅ Security & Compliance Verification"
+      options:
+        - label: "I confirm this submission contains no PII or sensitive NOAA data."
+          required: true
+        - label: "I understand this project must clear five Security Gates before reaching operations."
+          required: true
+
+  - type: textarea
+    id: pmo_governance_gates
+    attributes:
+      label: "🔒 INTERNAL ONLY: PMO Governance Checklists"
+      description: "FOR OFFICIAL OWP USE ONLY. Stakeholders leave this section blank."
+      value: |
+        ---
+        ### 🛡️ OWP Official Governance Gate Sign-Off
+        *Product Owners: Expand the current gate section to complete mandatory verification.*
+
+        <details>
+        <summary><b>🔹 GATE 1: Technical Integration (TRL 5 / SG1)</b></summary>
+
+        - [ ] Code successfully integrated into OWP sandbox repository.
+        - [ ] Initial linting, code compilation, and baseline tests pass.
+        - [ ] Automated security scan cleared with zero critical vulnerabilities.
+        - [ ] PMO Reviewer Assigned: ___________________________
+        </details>
+
+        <details>
+        <summary><b>🔸 GATE 2: Pre-Operational Validation (TRL 6 / SG2)</b></summary>
+
+        - [ ] Model/Code compiled and executed inside the OWP Proving Ground.
+        - [ ] Scientific validation metrics match or exceed current baseline.
+        - [ ] Functional containerization (Docker/Singularity) verified cloud-ready.
+        - [ ] Proving Ground Lead Approval Sign-Off.
+        </details>
+
+        <details>
+        <summary><b>⚡ GATE 3: System Hardening (TRL 7 / SG3)</b></summary>
+
+        - [ ] Code refactored and optimized for parallel performance scalability.
+        - [ ] Technical compatibility with WCOSS2 operational environment certified.
+        - [ ] High-availability and failover logic verified.
+        </details>
+
+        <details>
+        <summary><b>🛑 GATE 4: Formal Governance & Risk (TRL 8 / SG4)</b></summary>
+
+        - [ ] Final deep-dive security risk scan complete (Secrets/Dependabot).
+        - [ ] Official Governance Review Board session completed.
+        - [ ] Authority to Operate (ATO) formally granted by Technical Director.
+        </details>
+
+        <details>
+        <summary><b>🚀 GATE 5: National Operations (TRL 9 / SG5)</b></summary>
+
+        - [ ] Golden Copy deployed to live production environment.
+        - [ ] Continuous performance and data latency monitoring active.
+        - [ ] Full lifecycle operational and maintenance (O&M) handover complete.
+        </details>
